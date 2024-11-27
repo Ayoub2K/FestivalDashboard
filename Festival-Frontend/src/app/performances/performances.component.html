@@ -1,0 +1,80 @@
+<div class="per-dash">
+  <h1>Performances Dashboard</h1>
+  <p>Here you can find all the active performances</p>
+</div>
+<button class="toggle-button" (click)="toggleForm()">
+  {{ showForm ? 'Hide Create Performance Form' : 'New performance' }}
+</button>
+
+<div class="create-performance-card" *ngIf="showForm"> <!-- This should work -->
+  <h2>Create new performance</h2>
+  <form (ngSubmit)="createPerformance()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" type="text" [(ngModel)]="performanceData.name" name="name" required />
+    </div>
+
+
+    <div class="form-group">
+      <label for="dayOfPerformance">dayOfPerformance</label>
+      <input id="dayOfPerformance" type="text" [(ngModel)]="performanceData.dayOfPerformance" name="dayOfPerformance" required />
+    </div>
+
+    <div class="form-group" style="display: none">
+      <label for="startTime">startTime</label>
+      <input id="startTime" type="text" [(ngModel)]="performanceData.startTime" name="startTime" required />
+    </div>
+
+    <div class="form-group" style="display: none">
+      <label for="endTime">endTime</label>
+      <input id="endTime" type="text" [(ngModel)]="performanceData.endTime" name="endTime" required />
+    </div>
+
+    <div class="form-group" >
+      <label for="meme">Start Time</label>
+      <input id="meme" type="text"  name="meme" placeholder="12:00"/>
+    </div>
+
+    <div class="form-group" >
+      <label for="meme2">End Time</label>
+      <input id="meme2" type="text"  name="meme2" placeholder="13:00" />
+    </div>
+
+    <div class="form-group">
+      <label for="externalDJId">DJ</label>
+      <select id="externalDJId" [(ngModel)]="performanceData.externalDJId" name="externalDJId" required>
+        <option value="" disabled selected>Select a DJ</option> <!-- Optional default option -->
+        <option value="1">Martin Garrix</option>
+        <option value="2">Hardwell</option>
+        <option value="3">David Guetta</option>
+        <option value="4">Afrojack</option>
+        <option value="5">Don Diablo</option>
+      </select>
+    </div>
+
+<!--    <div class="form-group">-->
+<!--      <label for="songs">songs</label>-->
+<!--      <textarea id="songs" [(ngModel)]="performanceData.songs" name="songs"></textarea>-->
+<!--    </div>-->
+
+    <div class="form-group">
+      <label for="songs">Songs</label>
+      <div *ngFor="let song of performanceData.songs; let i = index" class="song-item">
+        <input
+          type="text"
+          [(ngModel)]="performanceData.songs[i]"
+          name="song{{i}}"
+          placeholder="Enter song name"
+          class="form-control"
+        />
+        <button (click)="removeSong(i)" class="btn btn-danger">Remove</button>
+      </div>
+      <button (click)="addSong()" class="btn btn-primary">Add Song</button>
+    </div>
+
+    <button type="submit" class="submit-button">Create Performance</button>
+  </form>
+</div>
+
+<h1>Performance List</h1>
+<app-performace-list></app-performace-list>

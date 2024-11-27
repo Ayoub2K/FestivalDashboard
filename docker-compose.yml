@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  postgres:
+      ports:
+        - "15432:5432"
+      image: postgres:latest
+      environment:
+        - POSTGRES_USER=festival-dashboard
+        - POSTGRES_PASSWORD=festival-dashboard
+        - DB_APP_NAME=festival-dashboard
+        - DB_APP_USER=festival-dashboard
+        - DB_APP_PASS=festival-dashboard
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=review-dashboard
+      - MONGO_INITDB_ROOT_PASSWORD=review-dashboard
+      - spring.data.mongodb.password=review-dashboard
+      - spring.data.mongodb.database=review-dashboard
+
+  zookeeper:
+    image: wurstmeister/zookeeper:latest
+    ports:
+      - "2181:2181"
+
+  # Kafka UI Service
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181

@@ -1,0 +1,63 @@
+<!-- Modal Header -->
+<div class="modal-header">
+  <h2>Update Performance</h2>
+</div>
+
+<!-- Modal Body -->
+<div class="modal-body">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        type="text"
+        [(ngModel)]="performanceData.name"
+        name="name"
+        required
+        class="input-field"
+      />
+
+      <div>
+        <label for="dayOfPerformance">Day of Performance</label>
+        <input
+          id="dayOfPerformance"
+          type="text"
+          [(ngModel)]="performanceData.dayOfPerformance"
+          name="dayOfPerformance"
+          required
+          class="input-field"
+        />
+      </div>
+
+      <div>
+        <label for="startTime">Start Time:</label>
+        <input
+          id="startTime"
+          type="text"
+          [value]="performanceData.startTime"
+        readonly
+        name="startTime"
+        required
+        class="input-field"
+        />
+      </div>
+
+      <div>
+        <label for="endTime">End Time:</label>
+        <input
+          id="endTime"
+          type="text"
+          [value]="performanceData.endTime"
+        readonly
+        name="endTime"
+        required
+        class="input-field"
+        />
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="submit-button">Update</button>
+    </div>
+  </form>
+</div>

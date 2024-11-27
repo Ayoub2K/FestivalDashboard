@@ -1,0 +1,54 @@
+<div class="filter-container">
+  <div>
+    <label for="genreFilter">Filter by Genre:</label>
+    <select id="genreFilter" [(ngModel)]="selectedGenre" (change)="loadDjs()">
+      <option value="">All</option>
+      <option value="Hip-Hop">Hip Hop</option>
+      <option value="Funk">Funk</option>
+      <option value="Classical">Classical</option>
+      <option value="Techno">Techno</option>
+    </select>
+  </div>
+
+  <div>
+    <label>
+      <input type="checkbox" [(ngModel)]="hideDjsWithoutPerformances" (change)="loadDjs()">
+      Performances
+    </label>
+  </div>
+</div>
+
+<div class="dj-list">
+  <div *ngFor="let dj of (djsWithPerformances$ | async)" class="dj-card">
+    <div class="dj-info">
+      <div class="dj-pic"></div>
+      <strong>{{ dj.name }}</strong> ({{ dj.genre }}, {{ dj.age }} years old)
+      <div class="buttons">
+        <div class="button1" (click)="openUpdateModal(dj)">U</div>
+        <div class="button2" (click)="onDeleteDj(dj.id)">X</div>
+      </div>
+    </div>
+
+    <ul *ngIf="dj.performances && dj.performances.length > 0" class="performance-list">
+      <li *ngFor="let performance of dj.performances" class="performance-item">
+        <div class="performance-info">
+          <strong>Performance Name:</strong> {{ performance.name }} <br>
+          <strong>Day:</strong> {{ performance.dayOfPerformance | date: 'longDate' }} <br>
+          <strong>Start Time:</strong> {{ performance.startTime | date: 'shortTime' }} <br>
+          <strong>End Time:</strong> {{ performance.endTime | date: 'shortTime' }} <br>
+
+          <strong>Songs:</strong>
+          <ul class="song-list">
+            <li *ngFor="let song of performance.songs" class="song-item">
+              {{ song }}
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+
+    <div *ngIf="!dj.performances || dj.performances.length === 0" class="no-performances">
+      <em>No performances.</em>
+    </div>
+  </div>
+</div>

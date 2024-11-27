@@ -1,0 +1,55 @@
+<div class="home-dash">
+  <h1 class="dash-title">News</h1>
+</div>
+<br>
+
+<div class="dj-list">
+<div class="news-card">
+  <div class="cardpic1"></div>
+  <div class="news">De leukste gratis feestjes tijdens ADE 2024</div>
+</div>
+<div class="news-card">
+  <div class="cardpic2"></div>
+  <div class="news">Martin Garrix opnieuw nummer 1 DJ van de wereld!</div>
+</div>
+<div class="news-card">
+  <div class="cardpic3"></div>
+  <div class="news">Scoor je festival must-haves met mega kortingen</div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<div class="home-dash">
+  <h1 class="dash-title">Upcomming performances</h1>
+</div>
+<br>
+<div class="dj-list">
+
+  <div *ngFor="let performance of (Performances$ | async)" class="dj-card">
+    <div class="dj-info">
+      <strong class="performance-title">{{ performance.name }}</strong>
+    </div>
+
+    <strong>DJ: </strong>{{ performance.dj.name }} <br>
+    <strong>Day of Performance: </strong>{{ performance.dayOfPerformance | date: 'dd-MM-yyyy' }} <br>
+    <strong>Event Starts At: </strong>{{ performance.startTime | date: 'HH:mm' }} <br>
+    <strong>Event Ends At: </strong>{{ performance.endTime | date: 'HH:mm' }} <br>
+
+    <strong>Songs:</strong>
+    <ul *ngIf="performance.songs && performance.songs.length > 0" class="performance-list">
+      <li *ngFor="let song of performance.songs" class="performance-item">
+        <div class="performance-info">
+          {{ song }} <br>
+        </div>
+      </li>
+    </ul>
+
+    <div *ngIf="!performance.songs || performance.songs.length === 0" class="no-performances">
+      <em>No Songs.</em>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+</div>

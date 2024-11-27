@@ -1,0 +1,33 @@
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <!-- Container wrapper -->
+  <div class="main-container">
+    <!-- Navbar brand -->
+    <div routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page"  class="logo"></div>
+
+    <!-- Toggle button for mobile -->
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Centered nav items under the brand -->
+      <div class="navbar-nav">
+        <li><a routerLink="/performance" routerLinkActive="active" ariaCurrentWhenActive="page">Performances</a></li>
+        <li><a routerLink="/review" routerLinkActive="active" ariaCurrentWhenActive="page">Reviews</a></li>
+        <li><a routerLink="/dj" routerLinkActive="active" ariaCurrentWhenActive="page">DJ</a></li>
+      </div>
+    </div>
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+
+<main class="main">
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</main>

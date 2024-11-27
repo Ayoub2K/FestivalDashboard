@@ -1,0 +1,36 @@
+<div class="dj-dash">
+  <h1>DJ's Dashboard</h1>
+<p>Here you can find all the active dj's</p>
+</div>
+<button class="toggle-button" (click)="toggleForm()">
+  {{ showForm ? 'Hide Create DJ Form' : 'Show Create DJ Form' }}
+</button>
+
+<div class="create-dj-card" *ngIf="showForm"> <!-- This should work -->
+  <h2>New DJ</h2>
+  <form (ngSubmit)="createDj()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" type="text" [(ngModel)]="djData.name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <input id="genre" type="text" [(ngModel)]="djData.genre" name="genre" required />
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input id="age" type="number" [(ngModel)]="djData.age" name="age" required />
+    </div>
+
+    <div class="form-group" style="display: none">
+      <label for="performances">Performances</label>
+      <textarea id="performances" [(ngModel)]="djData.performances" name="performances"></textarea>
+    </div>
+
+    <button type="submit" class="submit-button">Create DJ</button>
+  </form>
+</div>
+
+<app-dj-list></app-dj-list>

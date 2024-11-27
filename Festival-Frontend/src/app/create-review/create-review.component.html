@@ -1,0 +1,75 @@
+<div class="review-dash">
+  <h1>Give a review</h1>
+</div>
+
+<div class="filter-container">
+  <div>
+    <label>
+      <input type="checkbox" [(ngModel)]="hidePerformancesWithoutSongs" (change)="loadPerformances()">
+      Songs
+    </label>
+  </div>
+
+  <div>
+    <label for="djFilter">Filter by DJ:</label>
+    <select id="djFilter" [(ngModel)]="selectedDJ" (change)="loadPerformances()">
+      <option value="">All DJs</option>
+      <option value="Martin Garrix">Martin Garrix</option>
+      <option value="Hardwell">Hardwell</option>
+      <option value="David Guetta">David Guetta</option>
+      <option value="Afrojack">Afrojack</option>
+      <option value="Don Diablo">Don Diablo</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="dateFilter">Filter by Date:</label>
+    <input type="date" id="dateFilter" [(ngModel)]="selectedDate" (change)="loadPerformances()">
+  </div>
+</div>
+
+<div class="dj-list">
+  <div *ngFor="let performance of (Performances$ | async)" class="dj-card">
+    <div class="dj-info">
+      <strong class="performance-title">{{ performance.name }}</strong>
+    </div>
+
+    <strong>DJ: </strong>{{ performance.dj.name }} <br>
+    <strong>Day of Performance: </strong>{{ performance.dayOfPerformance | date: 'dd-MM-yyyy' }} <br>
+    <strong>Songs:</strong>
+    <ul *ngIf="performance.songs && performance.songs.length > 0" class="performance-list">
+      <li *ngFor="let song of performance.songs" class="performance-item">
+        <div class="performance-info">
+          {{ song }} <br>
+        </div>
+      </li>
+    </ul>
+
+    <div *ngIf="!performance.songs || performance.songs.length === 0" class="no-performances">
+      <em>No Songs.</em>
+    </div>
+
+    <button class="toggle-button" (click)="openReviewModal(performance.id)">Leave a review</button>
+    <br>
+  </div>
+</div>
+
+<!-- Modal for Review Form -->
+<ng-template #reviewDialog>
+  <div class="modal-content">
+    <h2 class="modal-title">Leave a Review</h2>
+
+    <div class="modal-body">
+      <label for="reviewName">Your Name:</label>
+      <input id="reviewName" [(ngModel)]="reviewName" class="modal-input" />
+
+      <label for="reviewText">Your Review:</label>
+      <textarea id="reviewText" [(ngModel)]="reviewText" class="modal-input"></textarea>
+    </div>
+
+    <div class="modal-actions">
+      <button class="button1" (click)="submitReview()">Submit</button>
+      <button class="button2" (click)="closeModal()">Cancel</button>
+    </div>
+  </div>
+</ng-template>

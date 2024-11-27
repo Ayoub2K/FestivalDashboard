@@ -1,0 +1,7 @@
+com/example/FestivalDashboard/mutationTest.class
+com/example/FestivalDashboard/PerformanceUnitTest.class
+com/example/FestivalDashboard/DjServiceIntegrationTest.class
+com/example/FestivalDashboard/steps/DjSteps.class
+com/example/FestivalDashboard/DjUnitTest.class
+com/example/FestivalDashboard/steps/CucumberSpringConfiguration.class
+com/example/FestivalDashboard/service/PerformanceServiceTest.class

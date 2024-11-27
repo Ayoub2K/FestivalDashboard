@@ -1,0 +1,13 @@
+/Users/ayoubaarkoub/IdeaProjects/FestivalDashboard/src/main/java/com/example/FestivalDashboard/FestivalDashboardApplication.java
+/Users/ayoubaarkoub/IdeaProjects/FestivalDashboard/src/main/java/com/example/FestivalDashboard/controller/DjController.java
+/Users/ayoubaarkoub/IdeaProjects/FestivalDashboard/src/main/java/com/example/FestivalDashboard/controller/PerformanceController.java
+/Users/ayoubaarkoub/IdeaProjects/FestivalDashboard/src/main/java/com/example/FestivalDashboard/domain/DJ.java
+/Users/ayoubaarkoub/IdeaProjects/FestivalDashboard/src/main/java/com/example/FestivalDashboard/domain/Palindrome.java
+/Users/ayoubaarkoub/IdeaProjects/FestivalDashboard/src/main/java/com/example/FestivalDashboard/domain/Performance.java
+/Users/ayoubaarkoub/IdeaProjects/FestivalDashboard/src/main/java/com/example/FestivalDashboard/exception/DjNotFoundException.java
+/Users/ayoubaarkoub/IdeaProjects/FestivalDashboard/src/main/java/com/example/FestivalDashboard/exception/GlobalExceptionHandler.java
+/Users/ayoubaarkoub/IdeaProjects/FestivalDashboard/src/main/java/com/example/FestivalDashboard/exception/PerformanceNotFoundException.java
+/Users/ayoubaarkoub/IdeaProjects/FestivalDashboard/src/main/java/com/example/FestivalDashboard/repository/DjRepository.java
+/Users/ayoubaarkoub/IdeaProjects/FestivalDashboard/src/main/java/com/example/FestivalDashboard/repository/PerformanceRepository.java
+/Users/ayoubaarkoub/IdeaProjects/FestivalDashboard/src/main/java/com/example/FestivalDashboard/service/DjService.java
+/Users/ayoubaarkoub/IdeaProjects/FestivalDashboard/src/main/java/com/example/FestivalDashboard/service/PerformanceService.java

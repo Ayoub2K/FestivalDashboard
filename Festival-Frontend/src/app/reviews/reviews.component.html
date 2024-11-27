@@ -1,0 +1,20 @@
+<div class="review-dash">
+  <h1>Review Dashboard</h1>
+  <p>Leave a review behind, and read those of other people</p>
+
+  <a routerLink="/create-review">
+    <button class="toggle-button">
+      Give a review
+    </button>
+  </a>
+</div>
+
+
+<div class="dj-list">
+  <div *ngFor="let review of (Reviews$ | async)" class="dj-card">
+    <div class="dj-info">
+      <strong class="review-title">{{ review.performanceName }}</strong> <!-- Display the performance name -->
+    </div>
+  <div class="review-text"><strong >{{ review.name }}</strong> said: "{{ review.review }}" <br>   </div>
+  </div>
+</div>

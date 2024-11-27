@@ -1,0 +1,213 @@
+body {
+  /* Ensure that the body has a background for the blur effect */
+  background-size: cover; /* Cover the entire background */
+  background-position: center; /* Center the background */
+  height: 100vh; /* Ensure the body takes full height */
+  margin: 0; /* Remove default margin */
+}
+
+.home-dash{
+  filter: grayscale(1);
+  background-image: url('../../assets/image/perf-ezgif.com-webp-to-jpg-converter.jpg'); /* Add your background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+  height: 20vh;
+  align-content: center;
+  background-color: #000000;
+}
+.dash-title{
+  color: black;
+}
+
+.dj-list {
+  text-align: center;
+  display: grid; /* Use grid for layout */
+  grid-template-columns: repeat(3, 1fr); /* Maximum of 3 columns */
+  gap: 20px; /* Space between the cards */
+  padding: 20px; /* Padding around the grid */
+  position: relative; /* For positioning */
+
+  z-index: 1; /* Ensure it sits above the body */
+}
+
+.dj-card {
+  background-color: rgba(28, 215, 96, 0.54); /* Dark green background */
+  backdrop-filter: blur(20px);
+  color: white; /* Text color */
+  padding: 15px; /* Padding inside the card */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for the card */
+  position: relative; /* Positioning context for layering */
+  z-index: 2; /* Ensure cards are above the backdrop */
+}
+
+.news{
+  padding: 15px 0;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.cardpic1{
+  background-image: url('../../assets/image/ade.jpg'); /* Add your background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+  height: 25vh;
+  align-content: center;
+  border-radius: 8px 8px 0px 0px;
+}
+.cardpic2{
+  background-image: url('../../assets/image/mg.jpeg'); /* Add your background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+  height: 25vh;
+  align-content: center;
+  border-radius: 8px 8px 0px 0px;
+}
+.cardpic3{
+  background-image: url('../../assets/image/korting.jpg'); /* Add your background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+  height: 25vh;
+  align-content: center;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.news-card {
+  background-color: rgb(129 129 129 / 54%); /* Dark green background */
+  backdrop-filter: blur(20px);
+  color: white; /* Text color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for the card */
+  position: relative; /* Positioning context for layering */
+  z-index: 2; /* Ensure cards are above the backdrop */
+}
+
+.dj-info {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center the entire content horizontally */
+  position: relative; /* Position elements within relative space */
+}
+
+.performance-title{
+  font-size: 36px;
+}
+
+.dj-info strong {
+  flex-grow: 1; /* Take up all available space */
+  text-align: center; /* Center the text of the name */
+}
+
+.buttons {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: flex-end; /* Align buttons to the right */
+  position: absolute; /* Position the buttons absolutely within the .dj-info */
+  right: 0; /* Align the buttons to the right edge */
+}
+
+.button1, .button2 {
+  background-color: #097ff6; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 5px 10px; /* Padding for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-left: 10px; /* Space between buttons */
+}
+
+.button1:hover, .button2:hover {
+  background-color: #4ea2f6; /* Darker green on hover */
+}
+
+.button2 {
+  background-color: #f44336; /* Red background for button2 */
+}
+
+.button2:hover {
+  background-color: #ce5f5b; /* Darker red on hover */
+}
+
+.performance-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0; /* Margin for spacing */
+}
+
+.performance-item {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for contrast */
+  padding: 0px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.performance-item:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Lighten on hover */
+}
+
+.performance-info {
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.song-list {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.song-item {
+  margin-bottom: 5px;
+}
+
+.no-performances {
+  margin-left: 10px;
+  font-style: italic;
+  color: #ccc; /* Lighter color for no performances text */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dj-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .dj-list {
+    grid-template-columns: 1fr; /* 1 column for small screens */
+  }
+
+  .dj-info {
+    font-size: 1em;
+  }
+
+  .dj-card {
+    padding: 10px; /* Less padding on smaller screens */
+  }
+}
+
+.filter-container {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  background-color: rgba(28, 215, 96, 0.43); /* Green background */
+  padding: 15px; /* Padding around the container */
+  border-radius: 8px; /* Rounded corners */
+  margin: 20px; /* Margin for spacing from other elements */
+}
+
+.filter-container div {
+  margin-right: 15px; /* Space between filter items */
+}
+
+.filter-container label {
+  margin-right: 10px; /* Space between label and select/checkbox */
+}
+
+.filter-container input[type="date"], .filter-container select {
+  padding: 5px; /* Padding for the date input and dropdown */
+}

@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: reviewdashboard
+  annotations:
+    github.com/project-slug: Ayoub2K/ReviewDashboard
+spec:
+  type: other
+  lifecycle: unknown
+  owner: ayoub-a

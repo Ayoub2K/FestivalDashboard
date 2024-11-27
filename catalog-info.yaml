@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: reviewdashboard
+  name: festivaldashboard
   annotations:
-    github.com/project-slug: Ayoub2K/ReviewDashboard
+    github.com/project-slug: Ayoub2K/FestivalDashboard
 spec:
   type: other
   lifecycle: unknown
